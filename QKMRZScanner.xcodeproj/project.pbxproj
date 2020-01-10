@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		121B535F216FBC72000F7123 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121B535E216FBC72000F7123 /* CoreImage.framework */; };
-		123BDF00216FF0C6000CF6CF /* ocrb.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 123BDEFF216FF0C2000CF6CF /* ocrb.traineddata */; };
 		124306312165512C000BE94A /* QKMRZScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124306302165512C000BE94A /* QKMRZScannerView.swift */; };
 		125C104F21767532009541D4 /* QKMRZScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C104E21767532009541D4 /* QKMRZScanResult.swift */; };
 		1277814321653FB500070E1C /* QKMRZScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1277814121653FB500070E1C /* QKMRZScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,11 +19,11 @@
 		12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */; };
 		63E83C4823C794A90027E96F /* QKMRZParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E83C4623C794A90027E96F /* QKMRZParser.framework */; };
 		63E83C4A23C794A90027E96F /* SwiftyTesseract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E83C4723C794A90027E96F /* SwiftyTesseract.framework */; };
+		63F0216C23C8B5E000DB2A80 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 63F0216B23C8B5E000DB2A80 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		121B535E216FBC72000F7123 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		123BDEFF216FF0C2000CF6CF /* ocrb.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocrb.traineddata; sourceTree = "<group>"; };
 		124306302165512C000BE94A /* QKMRZScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QKMRZScannerView.swift; sourceTree = "<group>"; };
 		125C104E21767532009541D4 /* QKMRZScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QKMRZScanResult.swift; sourceTree = "<group>"; };
 		1277813E21653FB500070E1C /* QKMRZScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QKMRZScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +37,7 @@
 		12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminanceThresholdFilter.swift; sourceTree = "<group>"; };
 		63E83C4623C794A90027E96F /* QKMRZParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QKMRZParser.framework; path = Carthage/Build/iOS/QKMRZParser.framework; sourceTree = "<group>"; };
 		63E83C4723C794A90027E96F /* SwiftyTesseract.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyTesseract.framework; path = Carthage/Build/iOS/SwiftyTesseract.framework; sourceTree = "<group>"; };
+		63F0216B23C8B5E000DB2A80 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		121B5359216FBBBF000F7123 /* tessdata */ = {
-			isa = PBXGroup;
-			children = (
-				123BDEFF216FF0C2000CF6CF /* ocrb.traineddata */,
-			);
-			path = tessdata;
-			sourceTree = "<group>";
-		};
 		122C5896216D64620001DE90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +97,7 @@
 		1277816A2165484E00070E1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				121B5359216FBBBF000F7123 /* tessdata */,
+				63F0216B23C8B5E000DB2A80 /* tessdata */,
 				1277814221653FB500070E1C /* Info.plist */,
 				1277814121653FB500070E1C /* QKMRZScanner.h */,
 			);
@@ -193,7 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				123BDF00216FF0C6000CF6CF /* ocrb.traineddata in Resources */,
+				63F0216C23C8B5E000DB2A80 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
