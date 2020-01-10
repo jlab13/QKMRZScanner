@@ -30,6 +30,7 @@ public class QKMRZScannerView: UIView {
     fileprivate var observer: NSKeyValueObservation?
     @objc public dynamic var isScanning = false
     public weak var delegate: QKMRZScannerViewDelegate?
+    public var isDocumentNumberOcrCorrection = true
     
     public var cutoutRect: CGRect {
         return cutoutView.cutoutRect
@@ -88,8 +89,13 @@ public class QKMRZScannerView: UIView {
         
         tesseract.performOCR(on: mrzTextImage) { recognizedString = $0 }
         
-        if let string = recognizedString, let mrzLines = mrzLines(from: string) {
-            return mrzParser.parse(mrzLines: mrzLines)
+        if let string = recognizedString, var mrzLines = mrzLines(from: string) {
+            if let result = mrzParser.parse(mrzLines: mrzLines), result.allCheckDigitsValid { return result }
+
+            if self.isDocumentNumberOcrCorrection, mrzLines.count > 1 {
+                mrzLines[1] = mrzLines[1].replacingOccurrences(of: "O", with: "0")
+                return mrzParser.parse(mrzLines: mrzLines)
+            }
         }
         
         return nil
